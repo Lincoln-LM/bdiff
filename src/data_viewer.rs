@@ -106,7 +106,7 @@ impl DataViewer {
             |chunk| {
                 format!(
                     "{:}",
-                    i8::from_be_bytes(chunk.try_into().unwrap_or_default())
+                    i8::from_le_bytes(chunk.try_into().unwrap_or_default())
                 )
             },
             delimiter,
@@ -121,7 +121,7 @@ impl DataViewer {
             |chunk| {
                 format!(
                     "{:}",
-                    u8::from_be_bytes(chunk.try_into().unwrap_or_default())
+                    u8::from_le_bytes(chunk.try_into().unwrap_or_default())
                 )
             },
             delimiter,
@@ -136,7 +136,7 @@ impl DataViewer {
             |chunk| {
                 format!(
                     "{:}",
-                    i16::from_be_bytes(chunk.try_into().unwrap_or_default())
+                    i16::from_le_bytes(chunk.try_into().unwrap_or_default())
                 )
             },
             delimiter,
@@ -151,7 +151,7 @@ impl DataViewer {
             |chunk| {
                 format!(
                     "{:}",
-                    u16::from_be_bytes(chunk.try_into().unwrap_or_default())
+                    u16::from_le_bytes(chunk.try_into().unwrap_or_default())
                 )
             },
             delimiter,
@@ -166,7 +166,7 @@ impl DataViewer {
             |chunk| {
                 format!(
                     "{:}",
-                    i32::from_be_bytes(chunk.try_into().unwrap_or_default())
+                    i32::from_le_bytes(chunk.try_into().unwrap_or_default())
                 )
             },
             delimiter,
@@ -181,7 +181,7 @@ impl DataViewer {
             |chunk| {
                 format!(
                     "{:}",
-                    u32::from_be_bytes(chunk.try_into().unwrap_or_default())
+                    u32::from_le_bytes(chunk.try_into().unwrap_or_default())
                 )
             },
             delimiter,
@@ -195,7 +195,7 @@ impl DataViewer {
             4,
             |chunk| {
                 float_buffer
-                    .format(f32::from_be_bytes(chunk.try_into().unwrap_or_default()))
+                    .format(f32::from_le_bytes(chunk.try_into().unwrap_or_default()))
                     .to_string()
             },
             delimiter,
@@ -210,7 +210,7 @@ impl DataViewer {
             |chunk| {
                 format!(
                     "{:}",
-                    i64::from_be_bytes(chunk.try_into().unwrap_or_default())
+                    i64::from_le_bytes(chunk.try_into().unwrap_or_default())
                 )
             },
             delimiter,
@@ -225,7 +225,7 @@ impl DataViewer {
             |chunk| {
                 format!(
                     "{:}",
-                    u64::from_be_bytes(chunk.try_into().unwrap_or_default())
+                    u64::from_le_bytes(chunk.try_into().unwrap_or_default())
                 )
             },
             delimiter,
@@ -239,7 +239,7 @@ impl DataViewer {
             8,
             |chunk| {
                 float_buffer
-                    .format(f64::from_be_bytes(chunk.try_into().unwrap_or_default()))
+                    .format(f64::from_le_bytes(chunk.try_into().unwrap_or_default()))
                     .to_string()
             },
             delimiter,
